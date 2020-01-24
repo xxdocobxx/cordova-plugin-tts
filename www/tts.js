@@ -10,8 +10,8 @@
 
 */
 
-exports.speak = function (text) {
-    return new Promise(function (resolve, reject) {
+exports.speak = function (text, resolve, reject) {
+//    return new Promise(function (resolve, reject) {
         var options = {};
 
         if (typeof text == 'string') {
@@ -21,23 +21,23 @@ exports.speak = function (text) {
         }
 
         cordova.exec(resolve, reject, 'TTS', 'speak', [options]);
-    });
+//    });
 };
 
-exports.stop = function() {
-    return new Promise(function (resolve, reject) {
+exports.stop = function(resolve, reject) {
+//    return new Promise(function (resolve, reject) {
         cordova.exec(resolve, reject, 'TTS', 'stop', []);
-    });
+//    });
 };
 
-exports.checkLanguage = function() {
-    return new Promise(function (resolve, reject) {
+exports.checkLanguage = function(resolve, reject) {
+//    return new Promise(function (resolve, reject) {
         cordova.exec(resolve, reject, 'TTS', 'checkLanguage', []);
-    });
+//    });
 };
 
-exports.openInstallTts = function() {
-    return new Promise(function (resolve, reject) {
+exports.openInstallTts = function(resolve, reject) {
+//    return new Promise(function (resolve, reject) {
         cordova.exec(resolve, reject, 'TTS', 'openInstallTts', []);
-    });
+//    });
 };
